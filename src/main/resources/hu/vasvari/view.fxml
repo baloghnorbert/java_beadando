@@ -1,0 +1,413 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="mainAnchor" prefHeight="600.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hu.vasvari.controller.ViewController">
+   <children>
+      <SplitPane fx:id="mainSplitPane" dividerPositions="0.29797979797979796" prefHeight="600.0" prefWidth="700.0">
+         <items>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+               <children>
+                  <StackPane fx:id="menuPane" prefHeight="598.0" prefWidth="205.0" />
+               </children>
+            </AnchorPane>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="600.0" prefWidth="700.0">
+               <children>
+                  <Pane fx:id="exportPane" prefHeight="598.0" prefWidth="487.0" visible="false">
+                     <children>
+                        <Label layoutX="31.0" layoutY="245.0" prefHeight="25.0" prefWidth="87.0" text="Fájl neve:">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="149.0" layoutY="62.0" prefHeight="25.0" prefWidth="132.0" text="Exportálás" textAlignment="CENTER">
+                           <font>
+                              <Font size="22.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="exportBtn" layoutX="312.0" layoutY="242.0" mnemonicParsing="false" onAction="#exportAction" prefHeight="32.0" prefWidth="60.0" text="Export" />
+                        <TextField fx:id="exportFileName" layoutX="132.0" layoutY="245.0" />
+                        <Label fx:id="exportRequireLabel" layoutX="135.0" layoutY="209.0" prefHeight="30.0" prefWidth="149.0" text="Kitöltése kötelező!" textFill="#e40101" visible="false" />
+                     </children>
+                  </Pane>
+                  <Pane fx:id="addNewClientPane" prefHeight="600.0" prefWidth="487.0" visible="false">
+                     <children>
+                        <HBox layoutX="-14.0" layoutY="60.0" prefHeight="172.0" prefWidth="487.0">
+                           <children>
+                              <Separator orientation="VERTICAL" prefHeight="172.0" prefWidth="33.0" visible="false" />
+                              <VBox prefHeight="180.0" prefWidth="159.0">
+                                 <children>
+                                    <Label prefHeight="30.0" prefWidth="183.0" text="Azonositó* :">
+                                       <font>
+                                          <Font size="22.0" />
+                                       </font>
+                                    </Label>
+                                    <Separator prefWidth="200.0" visible="false" />
+                                    <Label text="Név* :">
+                                       <font>
+                                          <Font size="22.0" />
+                                       </font>
+                                    </Label>
+                                    <Separator prefWidth="200.0" visible="false" />
+                                    <Label text="E-mail :">
+                                       <font>
+                                          <Font size="22.0" />
+                                       </font>
+                                    </Label>
+                                    <Separator prefWidth="200.0" visible="false" />
+                                    <Label text="Telefonszám* :">
+                                       <font>
+                                          <Font size="22.0" />
+                                       </font>
+                                    </Label>
+                                    <Separator prefWidth="200.0" visible="false" />
+                                    <Label text="Telefonszám 2. :">
+                                       <font>
+                                          <Font size="22.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </VBox>
+                              <Separator orientation="VERTICAL" prefHeight="172.0" prefWidth="55.0" visible="false" />
+                              <VBox prefHeight="172.0" prefWidth="195.0">
+                                 <children>
+                                    <Separator prefHeight="4.0" prefWidth="195.0" visible="false" />
+                                    <TextField fx:id="ownerClientID" prefHeight="20.0" prefWidth="195.0" />
+                                    <Separator prefHeight="14.0" prefWidth="195.0" visible="false" />
+                                    <TextField fx:id="ownerName" />
+                                    <Separator prefHeight="12.0" prefWidth="195.0" visible="false" />
+                                    <TextField fx:id="ownerMail" />
+                                    <Separator prefHeight="9.0" prefWidth="195.0" visible="false" />
+                                    <TextField fx:id="phonePrimary" />
+                                    <Separator prefHeight="13.0" prefWidth="195.0" visible="false" />
+                                    <TextField fx:id="phoneSecondary" />
+                                    <Separator prefHeight="9.0" prefWidth="195.0" visible="false" />
+                                 </children>
+                              </VBox>
+                           </children>
+                        </HBox>
+                        <HBox layoutX="-14.0" layoutY="255.0" prefHeight="229.0" prefWidth="487.0">
+                           <children>
+                              <Separator orientation="VERTICAL" prefHeight="172.0" prefWidth="33.0" visible="false" />
+                              <VBox prefHeight="180.0" prefWidth="159.0">
+                                 <children>
+                                    <Label prefHeight="30.0" prefWidth="183.0" text="Név* :">
+                                       <font>
+                                          <Font size="22.0" />
+                                       </font>
+                                    </Label>
+                                    <Separator prefWidth="200.0" visible="false" />
+                                    <Label text="Fajta* :">
+                                       <font>
+                                          <Font size="22.0" />
+                                       </font>
+                                    </Label>
+                                    <Separator prefWidth="200.0" visible="false" />
+                                    <Label text="Típus :">
+                                       <font>
+                                          <Font size="22.0" />
+                                       </font>
+                                    </Label>
+                                    <Separator prefWidth="200.0" visible="false" />
+                                    <Label text="Szín :">
+                                       <font>
+                                          <Font size="22.0" />
+                                       </font>
+                                    </Label>
+                                    <Separator prefWidth="200.0" visible="false" />
+                                    <Label text="Születési datum:">
+                                       <font>
+                                          <Font size="22.0" />
+                                       </font>
+                                    </Label>
+                                    <Separator prefWidth="200.0" visible="false" />
+                                    <Label text="Súly :">
+                                       <font>
+                                          <Font size="22.0" />
+                                       </font>
+                                    </Label>
+                                    <Separator prefWidth="200.0" visible="false" />
+                                    <Label text="Chipszám* :">
+                                       <font>
+                                          <Font size="22.0" />
+                                       </font>
+                                    </Label>
+                                    <Separator prefWidth="200.0" visible="false" />
+                                 </children>
+                              </VBox>
+                              <Separator orientation="VERTICAL" prefHeight="172.0" prefWidth="55.0" visible="false" />
+                              <VBox prefHeight="172.0" prefWidth="195.0">
+                                 <children>
+                                    <Separator prefHeight="4.0" prefWidth="195.0" visible="false" />
+                                    <TextField fx:id="petName" prefHeight="20.0" prefWidth="195.0" />
+                                    <Separator prefHeight="14.0" prefWidth="195.0" visible="false" />
+                                    <TextField fx:id="petKind" />
+                                    <Separator prefHeight="12.0" prefWidth="195.0" visible="false" />
+                                    <TextField fx:id="petType" />
+                                    <Separator prefHeight="9.0" prefWidth="195.0" visible="false" />
+                                    <TextField fx:id="petColor" />
+                                    <Separator prefHeight="13.0" prefWidth="195.0" visible="false" />
+                                    <DatePicker fx:id="petBirthDate" prefHeight="25.0" prefWidth="197.0" />
+                                    <Separator prefHeight="9.0" prefWidth="195.0" visible="false" />
+                                    <TextField fx:id="petWeight" />
+                                    <Separator prefHeight="9.0" prefWidth="195.0" visible="false" />
+                                    <TextField fx:id="petChipNumber" />
+                                    <Separator prefHeight="9.0" prefWidth="195.0" visible="false" />
+                                 </children>
+                              </VBox>
+                           </children>
+                        </HBox>
+                        <Label layoutX="137.0" layoutY="14.0" text="Új ügyfél felvitete">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="storeClientBtn" layoutX="322.0" layoutY="539.0" mnemonicParsing="false" onAction="#storeNewClient" prefHeight="35.0" prefWidth="105.0" text="Rögzítés" />
+                        <Label layoutX="14.0" layoutY="510.0" text="A *-gal jelőlet mezők kitöltése kötelező" textFill="#ee0c0c" />
+                     </children>
+                  </Pane>
+                  <Pane fx:id="petsPane" prefHeight="600.0" prefWidth="487.0">
+                     <children>
+                        <ComboBox fx:id="ownerCombobox" layoutX="175.0" layoutY="35.0" onAction="#ownerComboAction" prefWidth="150.0" />
+                        <Label layoutX="86.0" layoutY="31.0" prefHeight="17.0" prefWidth="72.0" text="Gazdi :">
+                           <font>
+                              <Font size="22.0" />
+                           </font>
+                        </Label>
+                        <TabPane fx:id="tabPane" layoutY="73.0" prefHeight="527.0" prefWidth="500.0" tabClosingPolicy="UNAVAILABLE">
+                           <tabs>
+                              <Tab fx:id="newTab" text="Felvitel">
+                                 <content>
+                                    <AnchorPane fx:id="newAnchorPane" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <Pane fx:id="felvitelTabPane" prefHeight="510.0" prefWidth="500.0">
+                                             <children>
+                                                <Label layoutX="135.0" layoutY="70.0" text="Új kisállat felvitele">
+                                                   <font>
+                                                      <Font size="20.0" />
+                                                   </font>
+                                                </Label>
+                                                <Button fx:id="addNewPetBtn" layoutX="303.0" layoutY="338.0" mnemonicParsing="false" onAction="#addNewPetAction" prefHeight="47.0" prefWidth="87.0" text="Felvitel" />
+                                                <HBox layoutX="14.0" layoutY="130.0" prefHeight="200.0" prefWidth="419.0">
+                                                   <children>
+                                                      <Separator orientation="VERTICAL" prefHeight="206.0" prefWidth="18.0" visible="false" />
+                                                      <VBox prefHeight="188.0" prefWidth="122.0">
+                                                         <children>
+                                                            <Label prefHeight="30.0" prefWidth="183.0" text="Név* :">
+                                                               <font>
+                                                                  <Font size="16.0" />
+                                                               </font>
+                                                            </Label>
+                                                            <Separator prefWidth="200.0" visible="false" />
+                                                            <Label text="Fajta* :">
+                                                               <font>
+                                                                  <Font size="16.0" />
+                                                               </font>
+                                                            </Label>
+                                                            <Separator prefWidth="200.0" visible="false" />
+                                                            <Label text="Típus :">
+                                                               <font>
+                                                                  <Font size="16.0" />
+                                                               </font>
+                                                            </Label>
+                                                            <Separator prefWidth="200.0" visible="false" />
+                                                            <Label text="Szín :">
+                                                               <font>
+                                                                  <Font size="16.0" />
+                                                               </font>
+                                                            </Label>
+                                                            <Separator prefWidth="200.0" visible="false" />
+                                                            <Label text="Születési datum:">
+                                                               <font>
+                                                                  <Font size="16.0" />
+                                                               </font>
+                                                            </Label>
+                                                            <Separator prefWidth="200.0" visible="false" />
+                                                            <Label text="Súly :">
+                                                               <font>
+                                                                  <Font size="16.0" />
+                                                               </font>
+                                                            </Label>
+                                                            <Separator prefWidth="200.0" visible="false" />
+                                                            <Label text="Chipszám* :">
+                                                               <font>
+                                                                  <Font size="16.0" />
+                                                               </font>
+                                                            </Label>
+                                                         </children>
+                                                      </VBox>
+                                                      <Separator orientation="VERTICAL" prefHeight="202.0" prefWidth="54.0" visible="false" />
+                                                      <VBox minHeight="-Infinity" minWidth="-Infinity" prefHeight="202.0" prefWidth="184.0">
+                                                         <children>
+                                                            <Separator prefHeight="7.0" prefWidth="184.0" visible="false" />
+                                                            <TextField fx:id="newPetName" minHeight="-Infinity" minWidth="-Infinity" prefHeight="22.0" prefWidth="161.0" />
+                                                            <Separator prefHeight="6.0" prefWidth="184.0" visible="false" />
+                                                            <TextField fx:id="newPetKind" minHeight="-Infinity" minWidth="-Infinity" prefHeight="22.0" prefWidth="184.0" />
+                                                            <Separator prefHeight="6.0" prefWidth="184.0" visible="false" />
+                                                            <TextField fx:id="newPetType" minHeight="-Infinity" minWidth="-Infinity" prefHeight="22.0" prefWidth="161.0" />
+                                                            <Separator prefHeight="6.0" prefWidth="195.0" visible="false" />
+                                                            <TextField fx:id="newPetColor" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="22.0" prefWidth="184.0" />
+                                                            <Separator prefHeight="10.0" prefWidth="184.0" visible="false" />
+                                                            <DatePicker fx:id="newPetBirthDate" prefHeight="25.0" prefWidth="185.0" />
+                                                            <Separator prefHeight="6.0" prefWidth="195.0" visible="false" />
+                                                            <TextField fx:id="newPetWeight" minHeight="-Infinity" minWidth="-Infinity" prefHeight="22.0" prefWidth="182.0" />
+                                                            <Separator prefHeight="6.0" prefWidth="195.0" visible="false" />
+                                                            <TextField fx:id="newPetChipNumber" minHeight="-Infinity" minWidth="-Infinity" prefHeight="22.0" prefWidth="139.0" />
+                                                            <Separator prefHeight="9.0" prefWidth="195.0" visible="false" />
+                                                         </children>
+                                                      </VBox>
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                          </Pane>
+                                       </children>
+                                    </AnchorPane>
+                                 </content>
+                              </Tab>
+                              <Tab fx:id="petsTab" text="Kisállatok">
+                                 <content>
+                                    <AnchorPane fx:id="petsAncorPane" minHeight="0.0" minWidth="0.0" prefHeight="478.0" prefWidth="442.0">
+                                       <children>
+                                          <Pane fx:id="petsTabPene" prefHeight="494.0" prefWidth="487.0">
+                                             <children>
+                                                <Label layoutX="167.0" layoutY="60.0" prefHeight="30.0" prefWidth="167.0" text="Jelenlegi kisállatai">
+                                                   <font>
+                                                      <Font size="20.0" />
+                                                   </font>
+                                                </Label>
+                                                <ScrollPane layoutY="163.0" prefHeight="336.0" prefWidth="487.0">
+                                                   <content>
+                                                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="323.0" prefWidth="478.0">
+                                                         <children>
+                                                            <TableView fx:id="petsTable" editable="true" layoutX="10.0" prefHeight="324.0" prefWidth="461.0" />
+                                                         </children>
+                                                      </AnchorPane>
+                                                   </content>
+                                                </ScrollPane>
+                                             </children>
+                                          </Pane>
+                                       </children>
+                                    </AnchorPane>
+                                 </content>
+                              </Tab>
+                              <Tab fx:id="vaccTab" text="Oltások">
+                                 <content>
+                                    <AnchorPane fx:id="vaccAnchorPane" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <Pane fx:id="vaccTabPene" prefHeight="510.0" prefWidth="500.0">
+                                             <children>
+                                                <Label layoutX="167.0" layoutY="91.0" prefHeight="30.0" prefWidth="167.0" text="Kisállat oltásai">
+                                                   <font>
+                                                      <Font size="20.0" />
+                                                   </font>
+                                                </Label>
+                                                <ScrollPane fx:id="vaccScrollPane" layoutY="142.0" prefHeight="226.0" prefWidth="487.0">
+                                                   <content>
+                                                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="227.0" prefWidth="487.0">
+                                                         <children>
+                                                            <TableView fx:id="vaccTable" layoutX="-7.0" prefHeight="224.0" prefWidth="493.0" />
+                                                         </children>
+                                                      </AnchorPane>
+                                                   </content>
+                                                </ScrollPane>
+                                                <ComboBox fx:id="petsCombobox" layoutX="175.0" layoutY="35.0" onAction="#petsComboAction" prefWidth="150.0" />
+                                                <Label layoutX="88.0" layoutY="32.0" prefHeight="17.0" prefWidth="72.0" text="Állat :">
+                                                   <font>
+                                                      <Font size="22.0" />
+                                                   </font>
+                                                </Label>
+                                                <Button fx:id="newVaccBtn" layoutX="304.0" layoutY="401.0" mnemonicParsing="false" onAction="#addNewVacc" prefHeight="39.0" prefWidth="115.0" text="Új oltás felvitele" />
+                                             </children>
+                                          </Pane>
+                                          <Pane fx:id="addVaccPane" layoutX="77.0" layoutY="68.0" prefHeight="307.0" prefWidth="346.0" visible="false">
+                                             <children>
+                                                <Label layoutX="121.0" layoutY="39.0" text="Új oltás hozzáadása" />
+                                                <Label layoutX="27.0" layoutY="106.0" text="Mikor">
+                                                   <font>
+                                                      <Font size="20.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label layoutX="26.0" layoutY="157.0" text="Érvényes">
+                                                   <font>
+                                                      <Font size="20.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label layoutX="26.0" layoutY="199.0" text="Mire">
+                                                   <font>
+                                                      <Font size="20.0" />
+                                                   </font>
+                                                </Label>
+                                                <TextField layoutX="121.0" layoutY="199.0" prefHeight="29.0" prefWidth="171.0" />
+                                                <DatePicker fx:id="vaccDate" layoutX="121.0" layoutY="106.0" />
+                                                <DatePicker fx:id="validDate" layoutX="121.0" layoutY="157.0" />
+                                                <Button fx:id="vaccCancelBtn" layoutX="220.0" layoutY="250.0" mnemonicParsing="false" onAction="#vaccCancelAction" prefHeight="32.0" prefWidth="72.0" text="Mégse" />
+                                                <Button fx:id="saveVaccBtn" layoutX="137.0" layoutY="250.0" mnemonicParsing="false" onAction="#addVaccAction" prefHeight="32.0" prefWidth="72.0" text="Mentés" />
+                                             </children>
+                                          </Pane>
+                                       </children>
+                                    </AnchorPane>
+                                 </content>
+                              </Tab>
+                           </tabs>
+                        </TabPane>
+                     </children>
+                  </Pane>
+                  <Pane fx:id="oldVaccPane" prefHeight="598.0" prefWidth="487.0" visible="false">
+                     <children>
+                        <Label layoutX="119.0" layoutY="47.0" text="Hamarosan lejáró oltások ">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                        <ScrollPane layoutY="99.0" prefHeight="500.0" prefWidth="487.0">
+                           <content>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="495.0" prefWidth="484.0">
+                                 <children>
+                                    <TableView fx:id="oldVaccTable" prefHeight="494.0" prefWidth="487.0">
+                                       <columns>
+                                          <TableColumn prefWidth="81.0" text="Állat neve" />
+                                          <TableColumn prefWidth="77.0" text="Típusa" />
+                                          <TableColumn prefWidth="97.0" text="Oltás lejárata" />
+                                          <TableColumn prefWidth="115.0" text="Gazdi neve" />
+                                          <TableColumn prefWidth="114.0" text="telefonszáma" />
+                                       </columns>
+                                    </TableView>
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </ScrollPane>
+                     </children>
+                  </Pane>
+               </children>
+            </AnchorPane>
+         </items>
+      </SplitPane>
+      <Pane fx:id="warningPane" layoutX="184.0" layoutY="150.0" prefHeight="281.0" prefWidth="363.0" visible="false">
+         <children>
+            <Label fx:id="warningLabel" layoutX="21.0" layoutY="66.0" text="A *-gal jelölt mezők kitöltése kötelező!">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Button fx:id="warningOkBtn" layoutX="138.0" layoutY="149.0" mnemonicParsing="false" onAction="#warningOk" prefHeight="30.0" prefWidth="72.0" text="Rendben" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
